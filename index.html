@@ -938,22 +938,22 @@
                       <p class="lead">I design and develop scalable, user-centered solutions that integrate front-end
                         and back-end systems, delivering seamless and reliable experiences.</p>
                       <div class="button-box d-flex flex-wrap align-items-center">
-                        <a href="#" class="btn tj-btn-secondary">
+                        <a href="#"  id="downloadCvBtn" class="btn tj-btn-secondary">
                           Download CV <i aria-hidden="true" class="fa fa-download"></i>
                         </a>
                         <ul class="ul-reset social-icons">
                           <li>
-                            <a href="https://www.linkedin.com">
+                            <a href="https://www.linkedin.com/in/muhammad-affan-wahid/">
                               <i aria-hidden="true" class="fab fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://github.com">
+                            <a href="https://github.com/muhammadaffanwahid/">
                               <i aria-hidden="true" class="fab fa-github"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.upwork.com">
+                            <a href="https://www.upwork.com/freelancers/~01f7bcb3867e4e3155?mp_source=share">
                               <img 
                                 src="upwork.svg" 
                                 aria-hidden="true" 
@@ -2228,6 +2228,20 @@
 
   document.getElementById('upwork-svg').addEventListener('mouseout', function() {
     this.src = 'upwork.svg'; // Original color version
+  });
+
+  document.getElementById('downloadCvBtn').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default action of the link
+
+    // Create an invisible link element to download the file
+    const link = document.createElement('a');
+    link.href = './Affan_Wahid_SE.pdf';  // Path to your PDF file
+    link.download = 'Affan_Wahid_SE.pdf'; // Name of the downloaded file
+
+    // Append the link, trigger click, and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   });
   </script>
   <script src="https://gerold.themejunction.net/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18"
