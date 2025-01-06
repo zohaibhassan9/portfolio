@@ -1555,85 +1555,59 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
                   <div class="form-horizontal">
 
 
-                    <div class="wpcf7 no-js" id="wpcf7-f486-p100-o1" lang="en-US" dir="ltr">
+                    <div class="wpcf7 no-js" lang="en-US" dir="ltr">
                       <div class="screen-reader-response">
                         <p role="status" aria-live="polite" aria-atomic="true"></p>
                         <ul></ul>
                       </div>
-                      <form action="send_email.php" method="post" method="post"
-                        class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
-                        <div style="display: none;">
-                          <input type="hidden" name="_wpcf7" value="486" />
-                          <input type="hidden" name="_wpcf7_version" value="5.9.8" />
-                          <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                          <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f486-p100-o1" />
-                          <input type="hidden" name="_wpcf7_container_post" value="100" />
-                          <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                        </div>
+                      <form action="process_form.php" method="post" class="custom-form" novalidate="novalidate">
                         <div class="contact-form">
-                          <div class="row gx-3">
-                            <div class="col-sm-6">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="fname"><input size="40" maxlength="400"
-                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="fname"
-                                    aria-required="true" aria-invalid="false" placeholder="First name" value=""
-                                    type="text" name="fname" /></span>
-                              </div>
+                            <div class="row gx-3">
+                                <div class="col-sm-6">
+                                    <div class="form_group">
+                                        <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form_group">
+                                        <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form_group">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form_group">
+                                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form_group">
+                                        <select name="services" class="form-control" required>
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="Front-end Development">Front-end Development</option>
+                                            <option value="Back-end Development">Back-end Development</option>
+                                            <option value="Full-stack Development">Full-stack Development</option>
+                                            <option value="Web App Optimization">Web App Optimization</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form_group">
+                                        <textarea name="message" id="message" class="form-control" placeholder="Message" rows="5" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form_btn">
+                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="lname"><input size="40" maxlength="400"
-                                    class="wpcf7-form-control wpcf7-text" id="lname" aria-invalid="false"
-                                    placeholder="Last name" value="" type="text" name="lname" /></span>
-                              </div>
-                            </div>
-                            <div class="col-sm-6">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="email"><input size="40" maxlength="400"
-                                    class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-                                    id="email" aria-required="true" aria-invalid="false" placeholder="Email address"
-                                    value="" type="email" name="email" /></span>
-                              </div>
-                            </div>
-                            <div class="col-sm-6">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="phone"><input size="40" maxlength="400"
-                                    class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
-                                    id="phone" aria-required="true" aria-invalid="false" placeholder="Phone number"
-                                    value="" type="tel" name="phone" /></span>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="Services"><select
-                                    class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required tj-nice-select"
-                                    aria-required="true" aria-invalid="false" name="Services">
-                                    <option value="">&#8212;Please choose an option&#8212;</option>
-                                    <option value="Branding Design">Front-end Development</option>
-                                    <option value="Web Design">Back-end Development</option>
-                                    <option value="UI/UX Design">Full-stack Developemnt</option>
-                                    <option value="App Design">Web App Optimization</option>
-                                  </select></span>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="form_group">
-                                <span class="wpcf7-form-control-wrap" data-name="message"><textarea cols="40" rows="10"
-                                    maxlength="2000"
-                                    class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" id="message"
-                                    aria-required="true" aria-invalid="false" placeholder="Message"
-                                    name="message"></textarea></span>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="form_btn">
-                                <button type="submit" class="btn tj-btn-primary">Send Message</button>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                        <div class="wpcf7-response-output" aria-hidden="true"></div>
-                      </form>
+                    </form>
+                    
                     </div>
                     <div class="clearfix"></div>
                   </div>
@@ -1767,14 +1741,14 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 </script>
 <script src="https://gerold.themejunction.net/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.0.1" id="swv-js"></script>
-<script id="contact-form-7-js-before">
+<!-- <script id="contact-form-7-js-before">
 var wpcf7 = {
 "api": {
     "root": "https:\/\/gerold.themejunction.net\/wp-json\/",
     "namespace": "contact-form-7\/v1"
 }
 };
-</script>
+</script> -->
 <script src="https://gerold.themejunction.net/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.0.1" id="contact-form-7-js"></script>
 <script src="https://gerold.themejunction.net/wp-content/plugins/tj-gerold-core/assets/js/tjcore.js?ver=2.0.0" id="tjcore-script-js"></script>
 <script src="https://gerold.themejunction.net/wp-content/themes/gerold/assets/js/bootstrap.bundle.min.js?ver=6.7" id="bootstrap-bundle-js"></script>
