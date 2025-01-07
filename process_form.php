@@ -1,37 +1,42 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize input fields to prevent XSS
-    $fname = htmlspecialchars(trim($_POST['fname']));
-    $lname = htmlspecialchars(trim($_POST['lname']));
-    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
-    $phone = htmlspecialchars(trim($_POST['phone']));
-    $services = htmlspecialchars(trim($_POST['services']));
-    $message = htmlspecialchars(trim($_POST['message']));
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-    // Validate required fields
-    if (empty($fname) || empty($email) || empty($phone) || empty($services) || empty($message)) {
-        echo "All fields are required.";
-        exit;
-    }
+//Load Composer's autoloader
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
-    // Set up email details
-    $to = "zabaidafashion@gmail.com"; // Replace with your email address
-    $subject = "New Contact Form Submission";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $email_body = "Name: $fname $lname\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Phone: $phone\n";
-    $email_body .= "Service: $services\n";
-    $email_body .= "Message: $message\n";
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
-    // Send email
-    if (mail($to, $subject, $email_body, $headers)) {
-        echo "Thank you for your message. We will get back to you soon!";
-    } else {
-        echo "Failed to send your message. Please try again later.";
-    }
-} else {
-    echo "Invalid request method.";
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'zh168159@gmail.com';                     //SMTP username
+    $mail->Password   = 'secret';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('zh168159@gmail.com', 'Contact Form');
+    $mail->addAddress('zabaidafashion@gmail.com', 'Affan Contact Form');     //Add a recipient
+  
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Try the form of affan';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-?>
